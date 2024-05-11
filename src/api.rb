@@ -1,5 +1,6 @@
 require 'json'
 require 'securerandom'
+require 'net/http'
 
 
 class ProductAPI
@@ -7,6 +8,7 @@ class ProductAPI
 
   def initialize
     @products = load_products
+    sync_external_products
     @auth_tokens = {}
   end
 
@@ -53,7 +55,7 @@ class ProductAPI
 
   def get_products(token)
     if authenticate_token(token)
-      @products
+      @products.sort_by(&:id)
     else
       "Authentication failed. Invalid token."
     end
@@ -87,6 +89,24 @@ class ProductAPI
 
   def authenticate_token(token)
     @auth_tokens.value?(token)
+  end
+
+  def sync_external_products
+    uri = URI('https://23f0013223494503b54c61e8bee1190c.api.mockbin.io/')
+    res = Net::HTTP.post(uri, '{}', 'Content-Type' => 'application/json')
+    data = JSON.parse(res.body)
+    new_products = data['data'].map { |p| Product.new(p['id'], p['name']) }
+    merge_products(new_products)
+  end
+
+  def merge_products(new_products)
+    new_products.each do |new_p|
+      # Skip if product already synced
+      next if @products.any? { |p| p.id == new_p.id }
+      @products << new_p
+    end
+
+    save_products
   end
 
 end

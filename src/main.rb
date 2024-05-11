@@ -12,26 +12,28 @@ password = gets.chomp
 token = api.authenticate(username, password)
 
 if token
+  puts "------"
   puts "Authenticated with token #{token}"
+  puts "------"
 
 
   # Get product list
   puts "Product list:"
   puts api.get_products(token)
+  puts "------"
 
 
   # Add product
-  add_product_promise = api.add_product_async(5, "Apple", token)
+  add_product_promise = api.add_product_async(7, "Apple", token)
   if add_product_promise.wait
     puts add_product_promise.value
-      # Get product by ID
-    puts "Product by ID: 5"
-    puts api.get_product(5, token)
+    puts "------"
+    # Get product by ID
+    puts "Product by ID: 7"
+    puts api.get_product(7, token)
   else
     puts "Promise did not finish within the timeout"
   end
-
-
 
 else
   puts "Authentication failed."
