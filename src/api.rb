@@ -84,7 +84,7 @@ class ProductAPI
   end
 
   def valid_credentials?(username, password)
-    # TODO get user list from file
+    # Mock unsafe validation - would ideally use hashing operation and compare hash w/ database
     username == "admin" && password == "password"
   end
 
