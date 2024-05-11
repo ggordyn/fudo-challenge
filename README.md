@@ -1,7 +1,7 @@
 
 # Fudo Backend Dev Challenge
 
-API sencilla de productos 
+API sencilla de productos elaborada para la Jr Backend Dev Challenge de Fudo.
 
 ## Credenciales
 Las credenciales de autenticación por defecto son:
