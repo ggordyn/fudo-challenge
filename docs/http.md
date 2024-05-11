@@ -1,0 +1,1 @@
+HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación utilizado para la transmisión de datos en la web, que pretende facilitar la solicitud y entrega de páginas web y sus recursos (imágenes, archivos) entre el navegador y el sitio web a través de mensajes de tipo request-response.

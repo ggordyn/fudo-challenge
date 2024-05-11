@@ -1,0 +1,3 @@
+Fudo es un software online que permite la administración y gestión de negocios gastronómicos mediante internet, desde cualquier navegador. Permite controlar los ingresos y egresos de caja, los pedidos y ventas, admitiendo múltiples medios de pago. Además, admite control de stock de productos e ingredientes, con manejo histórico y notificación por falta de stock.
+
+Busca facilitar todas las actividades administrativas de un negocio gastronómico manteniendo además información de los clientes y permitiendo la emisión de facturas a través de AFIP. Abarca también la problemática del manejo de camareros y delivery, incluyendo una app para camareros e integrándose con las aplicaciones más conocidas de repartidores.

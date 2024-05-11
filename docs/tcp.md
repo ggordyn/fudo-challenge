@@ -1,0 +1,1 @@
+TCP (Transmission Control Protocol) es un protocolo de comunicación de internet que establece una conexión entre entidades para garantizar que los datos enviados desde un punto a otro lleguen sin errores y en el orden en que fueron enviados, retransmitiendo aquellos que puedan perderse.
