@@ -4,7 +4,7 @@ require 'net/http'
 
 
 class ProductAPI
-  PRODUCTS_JSON = "products.json"
+  PRODUCTS_JSON = "/app/src/products.json"
 
   def initialize
     @products = load_products
@@ -13,7 +13,12 @@ class ProductAPI
   end
 
   def load_products
-    File.exist?(PRODUCTS_JSON) ? JSON.parse(File.read(PRODUCTS_JSON)).map { |p| Product.from_json(p.to_json) } : []
+    if File.exist?(PRODUCTS_JSON)
+      JSON.parse(File.read(PRODUCTS_JSON)).map { |p| Product.from_json(p.to_json) }
+    else
+      puts "The products file #{PRODUCTS_JSON} does not exist."
+      []
+    end
   end
 
   def save_products

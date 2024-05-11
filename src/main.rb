@@ -24,7 +24,7 @@ if token
 
 
   # Add product
-  add_product_promise = api.add_product_async(7, "Apple", token)
+  add_product_promise = api.add_product_async(7, "Orange", token)
   if add_product_promise.wait
     puts add_product_promise.value
     puts "------"
