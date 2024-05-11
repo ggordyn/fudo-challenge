@@ -3,6 +3,13 @@
 
 API sencilla de productos 
 
+## Credenciales
+Las credenciales de autenticación por defecto son:
+```bash
+    usuario: admin
+    contraseña: password
+```
+
 ## Instalación
 
 Instalar mediante docker utilizando el dockerfile provisto en el root del repositorio. El contenedor de docker manejará la instalación de dependencias y gemas de ruby.
