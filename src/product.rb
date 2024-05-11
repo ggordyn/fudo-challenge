@@ -7,6 +7,12 @@ class Product
     @name = name
   end
 
+  def ==(other)
+    return false unless other.is_a?(Product)
+
+    id == other.id && name == other.name
+  end
+
   def to_s
     "#{@id}: #{@name}"
   end
